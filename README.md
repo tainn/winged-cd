@@ -3,8 +3,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 A utilitiy CLI tool that allows for quick changes to distant directories by recursively searching for partial name
-matches and performing a `cd` on the first match. Bash acts as a CLI source entrypoint, while Python as an argument
-parser and recursive traversal tool.
+matches and performing a `cd` on the first match.
 
 ## Setup
 
