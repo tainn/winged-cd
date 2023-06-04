@@ -40,7 +40,7 @@ There are several options that can be passed as arguments.
 ```
 short opt | long opt :: description :: default :: with value
 
--r | --root :: topmost search dir :: $HOME :: true
+-r | --root :: topmost search dir :: $PWD :: true
 -s | --sensitive :: force a case-sensitive search :: false :: false
 -d | --dots :: consider hidden dirs in traversal :: false :: false
 ```
