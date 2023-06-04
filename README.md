@@ -1,25 +1,19 @@
 # winged-cd
 
-[![Code style: black](https://img.shields.io/badge/style-black-000000.svg)](https://github.com/psf/black)
-
-A utilitiy CLI tool that allows for quick changes to distant directories by recursively searching for partial name
+A utility CLI tool that allows for quick changes to distant directories by recursively searching for partial name
 matches and performing a `cd` on the first match.
 
 ## Setup
 
-To allow in-terminal `cd` to take effect and not being run in a subprocess, a bash script `wcd.sh` has to be run
-as `source`. Being an entrypoint, it then calls a python script `wcd_core.py` which includes the logic that returns the
-desired path. As a result, both files present in the `src` dir are required.
-
-Both files have to be set as executable:
+The bash script has to be set as executable.
 
 ```bash
-$ chmod +x wcd.sh wcd_core.py
+$ chmod +x wcd.sh
 ```
 
-When used, they are expected to be inside `~/bin`.
-
-To ease and quicken the execution, it is recommended to set up a shortening alias in `~/.bashrc`:
+It is recommended to put it inside a directory on the `$PATH`, such as `~/bin`. To allow in-terminal `cd` to take effect
+and not being run in a subprocess, `wcd.sh` has to be run as `source`. To ease and quicken the execution, it is
+recommended to set up a shortening alias in `~/.bashrc`.
 
 ```bash
 alias {w,wcd}="source wcd.sh"
@@ -29,39 +23,24 @@ The example above will accept both `w` and `wcd` as aliases for `source wcd.sh`,
 that `w` usually points to `/usr/bin/w` by default. In case you do not want to override this behavior, either
 replace `w` with some other character or keep to the `wcd` alias only.
 
-## Usage
+## Run
 
-Once set up, the usage can be as simple as:
+Once set up, the usage can be quite simple, with only `dst` being a required positional argument.
 
 ```bash
-$ w <dst>
+$ w <dst> [opts]
 ```
 
-Where `dst` is an arbitrary text to match anywhere in the destination directory name.
+The referenced `dst` is an arbitrary text to match anywhere in the destination directory name.
 
-Help with additional options can be output by passing the `--help` flag:
+## Options
 
-```bash
-$ w --help
+There are several options that can be passed as arguments.
+
 ```
+short opt | long opt :: description :: default :: with value
 
-To illustrate on a simulated filesystem, note the `w --root . quu` line:
-
-```bash
-[Foo]$ tree
-.
-└── Bar
-    └── Baz
-        ├── Grault
-        │   └── Garply
-        └── Qux
-            └── Quux
-                └── Corge
-
-[Foo]$ 
-[Foo]$ w --root . quu
-[Quux]$ 
-[Quux]$ tree
-.
-└── Corge
+-r | --root :: topmost search dir :: $HOME :: true
+-s | --sensitive :: force a case-sensitive search :: false :: false
+-d | --dots :: consider hidden dirs in traversal :: false :: false
 ```
