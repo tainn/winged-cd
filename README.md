@@ -38,9 +38,9 @@ The referenced `dst` is an arbitrary text to match anywhere in the destination d
 There are several options that can be passed as arguments.
 
 ```
-short opt | long opt :: description :: default :: with value
+short opt | long opt :: description :: type :: default :: with value?
 
--r | --root :: topmost search dir :: $PWD :: true
--s | --sensitive :: force a case-sensitive search :: false :: false
--d | --dots :: consider hidden dirs in traversal :: false :: false
+-r | --root :: topmost search dir :: string :: $PWD :: true
+-s | --sensitive :: force a case-sensitive search :: boolean :: false :: false
+-d | --dots :: consider hidden dirs in traversal :: boolean :: false :: false
 ```
