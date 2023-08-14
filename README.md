@@ -3,7 +3,7 @@
 A utility CLI tool that allows for quick changes to distant directories by recursively searching for partial name
 matches and performing a `cd` on the first match.
 
-### Setup
+## Setup
 
 The bash script has to be set as executable.
 
@@ -23,7 +23,7 @@ The example above will accept both `w` and `wcd` as aliases for `source wcd.sh`,
 that `w` usually points to `/usr/bin/w` by default. In case you do not want to override this behavior, either
 replace `w` with some other character or keep to the `wcd` alias only.
 
-### Run
+## Run
 
 Once set up, the usage can be quite simple, with only `dst` being a required positional argument.
 
@@ -33,7 +33,7 @@ w <dst> [opts]
 
 The referenced `dst` is an arbitrary text to match anywhere in the destination directory name.
 
-### Options
+## Options
 
 There are several options that can be passed as arguments.
 
