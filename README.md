@@ -12,20 +12,20 @@ chmod +x wcd.sh
 ```
 
 It is recommended to put it inside a directory on the `$PATH`, such as `~/bin`. To allow in-terminal `cd` to take effect
-and not being run in a subprocess, `wcd.sh` has to be run as `source`. To ease and quicken the execution, it is
+and not being run in a subprocess, `wcd.sh` has to be run as source. To ease and quicken the execution, it is
 recommended to set up a shortening alias in `~/.bashrc`.
 
 ```bash
-alias {w,wcd}="source wcd.sh"
+alias {w,wcd}=". wcd.sh"
 ```
 
-The example above will accept both `w` and `wcd` as aliases for `source wcd.sh`, allowing for faster usage. Do note
-that `w` usually points to `/usr/bin/w` by default. In case you do not want to override this behavior, either
-replace `w` with some other character or keep to the `wcd` alias only.
+The example above will accept both `w` and `wcd` as aliases for `. wcd.sh`. Do note that `w` usually points
+to `/usr/bin/w` by default. In case you do not want to override this behavior, either replace `w` with some other
+character or keep to the `wcd` alias only.
 
 ## Run
 
-Once set up, the usage can be quite simple, with only `dst` being a required positional argument.
+Once set up, it can be used with only `dst` being a required argument.
 
 ```console
 w <dst> [opts]
