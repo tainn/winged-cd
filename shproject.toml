@@ -1,0 +1,7 @@
+[project]
+name = "winged-cd"
+version = "0.1.1"
+readme = "readme.md"
+
+[project.urls]
+homepage = "https://github.com/tainn/winged-cd"
