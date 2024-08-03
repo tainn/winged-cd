@@ -1,7 +1,7 @@
 # winged-cd
 
 A utility CLI tool that allows for quick changes to distant directories by recursively searching for partial name
-matches and performing a `cd` on the first match
+matches and performing a `cd` on the first match.
 
 ## Setup
 
@@ -21,7 +21,7 @@ alias {w,wcd}=". wcd.sh"
 
 The example above will accept both `w` and `wcd` as aliases for `. wcd.sh`. Do note that `w` usually points
 to `/usr/bin/w` by default. In case you do not want to override this behavior, either replace `w` with some other
-character or keep to the `wcd` alias only
+character or keep to the `wcd` alias only.
 
 ## Run
 
@@ -31,7 +31,7 @@ Once set up, it can be used with only `dst` being a required argument:
 w <dst> [opts]
 ```
 
-The referenced `dst` is an arbitrary text to match anywhere in the destination directory name
+The referenced `dst` is an arbitrary text to match anywhere in the destination directory name.
 
 ## Options
 
